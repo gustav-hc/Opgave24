@@ -1,5 +1,19 @@
-public class ChildrensSavingAccount extends SavingsAccount{
+public class ChildrensSavingAccount extends BankAccount implements Depositable, InterestBearing{
+    private double interestRate;
+
     public ChildrensSavingAccount(double balance) {
-        super(balance, 0.01);
+        super(balance);
+    }
+
+    public void deposit(double amount) {
+        setBalance(getBalance() + amount);
+    }
+
+    public void withdraw(double amount) {
+        setBalance(getBalance() - amount);
+    }
+
+    public void applyInterest() {
+        setBalance(getBalance() + getBalance() * interestRate);
     }
 }
