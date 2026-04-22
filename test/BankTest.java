@@ -25,6 +25,24 @@ void getInterestBearingAccounts() {
     assertTrue(restult.contains(childrensSavingAccount));
 }
 
+void testApplyInterest() {
+    //Arrange
+    Bank bank = new Bank();
+    SavingsAccount savingsAccount = new SavingsAccount(1000, 0.05);
+    ChildrensSavingAccount childrensSavingAccount = new ChildrensSavingAccount(1000);
+    CheckingAccount checkingAccount = new CheckingAccount(1000);
+
+    bank.addAccount(savingsAccount);
+    bank.addAccount(childrensSavingAccount);
+    bank.addAccount(checkingAccount);
+
+    //Act
+    bank.applyInterest();
+
+    //Assert
+    assertEquals(1050.0, savingsAccount.getBalance());
+}
+
 
 
 }

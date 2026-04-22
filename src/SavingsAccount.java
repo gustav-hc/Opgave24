@@ -18,7 +18,4 @@ public class SavingsAccount extends BankAccount implements Withdrawable, Deposit
         setBalance(getBalance() + amount);
     }
 
-    public double getInterestRate() {
-        return interestRate;
-    }
 }

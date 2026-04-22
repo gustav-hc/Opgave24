@@ -22,4 +22,12 @@ public class Bank {
         }
         return interestBearingAccounts;
     }
+
+    public void applyInterest() {
+        for (BankAccount account : bankAccounts) {
+            if (account instanceof InterestBearing) {
+                ((InterestBearing) account).applyInterest();
+            }
+        }
+    }
 }
