@@ -9,9 +9,7 @@ public class ChildrensSavingAccount extends BankAccount implements Depositable, 
         setBalance(getBalance() + amount);
     }
 
-    public void withdraw(double amount) {
-        setBalance(getBalance() - amount);
-    }
+
 
     public void applyInterest() {
         setBalance(getBalance() + getBalance() * interestRate);
